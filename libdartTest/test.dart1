@@ -1,0 +1,53 @@
+MOV @R0, 0 ; R0 is the previous previous number
+MOV @R1, 1 ; R1 is the previous number
+MOV @R2, 1 ; R2 is the current number
+MOV @R3, 0 ; R3 is the counter
+MOV @R4, 20 ; Print 20 numbers
+PRINTD R1
+PRINTC ' '
+: LOOP:
+MOV @R2, R1
+ADD @R2, R0
+MOV @R0, R1
+MOV @R1, R2
+PRINTD R2
+PRINTC ' '
+ADD @R3, 1
+CMP R3, R4
+JL LOOP:
+PRINT "\nFinished!\n"
+RET
+
+print "Starting DART runtime compiler...\n\n"
+mov @r0, "/Users/wrsford/Dropbox/Development/dart/libdartTest/test2.dart1"
+allc @r1, 200
+fopen r1, r0
+print "Compiling:\n"
+print r1
+printc '\n'
+compile @r2, r1
+print "\nPC: "
+printd PC
+printc '\n'
+call r2
+print "Finished runtime compiler.\n\n"
+
+; Test the callstack
+print "Testing callstack...\n"
+break
+cmp 1, 2
+break
+call label:
+break
+print "returned\n"
+jl end:
+print "Callstack is fucked up.\n"
+
+: label:
+break
+print "got here\n"
+cmp 2, 1
+ret
+
+: end:
+ret

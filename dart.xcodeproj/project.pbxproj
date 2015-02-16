@@ -6,8 +6,58 @@
 	objectVersion = 46;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		FC0817A41A013640003A6D07 /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = FC0817A31A013640003A6D07 /* main.c */; };
+		FC0817A61A013640003A6D07 /* libdartTest.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = FC0817A51A013640003A6D07 /* libdartTest.1 */; };
+		FC0817AA1A013654003A6D07 /* libdart.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FC08177F1A0135F6003A6D07 /* libdart.a */; };
+		FC7292971A9297FB00FD0AEE /* Dart.c in Sources */ = {isa = PBXBuildFile; fileRef = FC72928B1A9297FB00FD0AEE /* Dart.c */; };
+		FC7292981A9297FB00FD0AEE /* Dart.h in Headers */ = {isa = PBXBuildFile; fileRef = FC72928C1A9297FB00FD0AEE /* Dart.h */; };
+		FC7292991A9297FB00FD0AEE /* DartCompiler.c in Sources */ = {isa = PBXBuildFile; fileRef = FC72928D1A9297FB00FD0AEE /* DartCompiler.c */; };
+		FC72929A1A9297FB00FD0AEE /* DartCompiler.h in Headers */ = {isa = PBXBuildFile; fileRef = FC72928E1A9297FB00FD0AEE /* DartCompiler.h */; };
+		FC72929B1A9297FB00FD0AEE /* DartDelegate.c in Sources */ = {isa = PBXBuildFile; fileRef = FC72928F1A9297FB00FD0AEE /* DartDelegate.c */; };
+		FC72929C1A9297FB00FD0AEE /* DartDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = FC7292901A9297FB00FD0AEE /* DartDelegate.h */; };
+		FC72929D1A9297FB00FD0AEE /* DartExecutor.c in Sources */ = {isa = PBXBuildFile; fileRef = FC7292911A9297FB00FD0AEE /* DartExecutor.c */; };
+		FC72929E1A9297FB00FD0AEE /* DartExecutor.h in Headers */ = {isa = PBXBuildFile; fileRef = FC7292921A9297FB00FD0AEE /* DartExecutor.h */; };
+		FC72929F1A9297FB00FD0AEE /* DartParser.h in Headers */ = {isa = PBXBuildFile; fileRef = FC7292931A9297FB00FD0AEE /* DartParser.h */; };
+		FC7292A01A9297FB00FD0AEE /* DartRam.c in Sources */ = {isa = PBXBuildFile; fileRef = FC7292941A9297FB00FD0AEE /* DartRam.c */; };
+		FC7292A11A9297FB00FD0AEE /* DartRam.h in Headers */ = {isa = PBXBuildFile; fileRef = FC7292951A9297FB00FD0AEE /* DartRam.h */; };
+		FC7292A21A9297FB00FD0AEE /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = FC7292961A9297FB00FD0AEE /* main.c */; };
+		FCCC33121A916E94002725B6 /* Documentation.md in Sources */ = {isa = PBXBuildFile; fileRef = FCCC33111A916E94002725B6 /* Documentation.md */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		FC08179F1A013640003A6D07 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+				FC0817A61A013640003A6D07 /* libdartTest.1 in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		FC08177F1A0135F6003A6D07 /* libdart.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libdart.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		FC0817A11A013640003A6D07 /* libdartTest */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = libdartTest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FC0817A31A013640003A6D07 /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
+		FC0817A51A013640003A6D07 /* libdartTest.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = libdartTest.1; sourceTree = "<group>"; };
+		FC0817AB1A014EA2003A6D07 /* test.dart1 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = test.dart1; sourceTree = "<group>"; };
+		FC0817AC1A014EB1003A6D07 /* test2.dart1 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = test2.dart1; sourceTree = "<group>"; };
+		FC72928B1A9297FB00FD0AEE /* Dart.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = Dart.c; sourceTree = "<group>"; };
+		FC72928C1A9297FB00FD0AEE /* Dart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Dart.h; sourceTree = "<group>"; };
+		FC72928D1A9297FB00FD0AEE /* DartCompiler.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = DartCompiler.c; sourceTree = "<group>"; };
+		FC72928E1A9297FB00FD0AEE /* DartCompiler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DartCompiler.h; sourceTree = "<group>"; };
+		FC72928F1A9297FB00FD0AEE /* DartDelegate.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = DartDelegate.c; sourceTree = "<group>"; };
+		FC7292901A9297FB00FD0AEE /* DartDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DartDelegate.h; sourceTree = "<group>"; };
+		FC7292911A9297FB00FD0AEE /* DartExecutor.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = DartExecutor.c; sourceTree = "<group>"; };
+		FC7292921A9297FB00FD0AEE /* DartExecutor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DartExecutor.h; sourceTree = "<group>"; };
+		FC7292931A9297FB00FD0AEE /* DartParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DartParser.h; sourceTree = "<group>"; };
+		FC7292941A9297FB00FD0AEE /* DartRam.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = DartRam.c; sourceTree = "<group>"; };
+		FC7292951A9297FB00FD0AEE /* DartRam.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DartRam.h; sourceTree = "<group>"; };
+		FC7292961A9297FB00FD0AEE /* main.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
+		FCCC33111A916E94002725B6 /* Documentation.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = Documentation.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -18,12 +68,22 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		FC08179E1A013640003A6D07 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FC0817AA1A013654003A6D07 /* libdart.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
 		FC0817761A0135F6003A6D07 = {
 			isa = PBXGroup;
 			children = (
+				FC08179C1A013615003A6D07 /* DART */,
+				FC0817A21A013640003A6D07 /* libdartTest */,
 				FC0817801A0135F6003A6D07 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -32,8 +92,40 @@
 			isa = PBXGroup;
 			children = (
 				FC08177F1A0135F6003A6D07 /* libdart.a */,
+				FC0817A11A013640003A6D07 /* libdartTest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		FC08179C1A013615003A6D07 /* DART */ = {
+			isa = PBXGroup;
+			children = (
+				FC72928B1A9297FB00FD0AEE /* Dart.c */,
+				FC72928C1A9297FB00FD0AEE /* Dart.h */,
+				FC72928D1A9297FB00FD0AEE /* DartCompiler.c */,
+				FC72928E1A9297FB00FD0AEE /* DartCompiler.h */,
+				FC72928F1A9297FB00FD0AEE /* DartDelegate.c */,
+				FC7292901A9297FB00FD0AEE /* DartDelegate.h */,
+				FC7292911A9297FB00FD0AEE /* DartExecutor.c */,
+				FC7292921A9297FB00FD0AEE /* DartExecutor.h */,
+				FC7292931A9297FB00FD0AEE /* DartParser.h */,
+				FC7292941A9297FB00FD0AEE /* DartRam.c */,
+				FC7292951A9297FB00FD0AEE /* DartRam.h */,
+				FC7292961A9297FB00FD0AEE /* main.c */,
+				FCCC33111A916E94002725B6 /* Documentation.md */,
+			);
+			name = DART;
+			sourceTree = "<group>";
+		};
+		FC0817A21A013640003A6D07 /* libdartTest */ = {
+			isa = PBXGroup;
+			children = (
+				FC0817A31A013640003A6D07 /* main.c */,
+				FC0817A51A013640003A6D07 /* libdartTest.1 */,
+				FC0817AB1A014EA2003A6D07 /* test.dart1 */,
+				FC0817AC1A014EB1003A6D07 /* test2.dart1 */,
+			);
+			path = libdartTest;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -43,6 +135,12 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FC72929A1A9297FB00FD0AEE /* DartCompiler.h in Headers */,
+				FC72929C1A9297FB00FD0AEE /* DartDelegate.h in Headers */,
+				FC7292A11A9297FB00FD0AEE /* DartRam.h in Headers */,
+				FC72929E1A9297FB00FD0AEE /* DartExecutor.h in Headers */,
+				FC7292981A9297FB00FD0AEE /* Dart.h in Headers */,
+				FC72929F1A9297FB00FD0AEE /* DartParser.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -66,6 +164,23 @@
 			productReference = FC08177F1A0135F6003A6D07 /* libdart.a */;
 			productType = "com.apple.product-type.library.static";
 		};
+		FC0817A01A013640003A6D07 /* libdartTest */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FC0817A71A013640003A6D07 /* Build configuration list for PBXNativeTarget "libdartTest" */;
+			buildPhases = (
+				FC08179D1A013640003A6D07 /* Sources */,
+				FC08179E1A013640003A6D07 /* Frameworks */,
+				FC08179F1A013640003A6D07 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = libdartTest;
+			productName = libdartTest;
+			productReference = FC0817A11A013640003A6D07 /* libdartTest */;
+			productType = "com.apple.product-type.tool";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -88,6 +203,7 @@
 			projectRoot = "";
 			targets = (
 				FC08177E1A0135F6003A6D07 /* dart */,
+				FC0817A01A013640003A6D07 /* libdartTest */,
 			);
 		};
 /* End PBXProject section */
@@ -97,6 +213,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FC7292991A9297FB00FD0AEE /* DartCompiler.c in Sources */,
+				FC72929B1A9297FB00FD0AEE /* DartDelegate.c in Sources */,
+				FC72929D1A9297FB00FD0AEE /* DartExecutor.c in Sources */,
+				FC7292971A9297FB00FD0AEE /* Dart.c in Sources */,
+				FCCC33121A916E94002725B6 /* Documentation.md in Sources */,
+				FC7292A01A9297FB00FD0AEE /* DartRam.c in Sources */,
+				FC7292A21A9297FB00FD0AEE /* main.c in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FC08179D1A013640003A6D07 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FC0817A41A013640003A6D07 /* main.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -189,6 +320,24 @@
 			};
 			name = Release;
 		};
+		FC0817A81A013640003A6D07 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		FC0817A91A013640003A6D07 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -208,6 +357,16 @@
 				FC0817851A0135F6003A6D07 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FC0817A71A013640003A6D07 /* Build configuration list for PBXNativeTarget "libdartTest" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FC0817A81A013640003A6D07 /* Debug */,
+				FC0817A91A013640003A6D07 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

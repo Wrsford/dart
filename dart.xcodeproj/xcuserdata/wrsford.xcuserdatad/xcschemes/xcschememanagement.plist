@@ -9,10 +9,20 @@
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
+		<key>libdartTest.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
 		<key>FC08177E1A0135F6003A6D07</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>FC0817A01A013640003A6D07</key>
 		<dict>
 			<key>primary</key>
 			<true/>
