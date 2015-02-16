@@ -21,6 +21,7 @@ or install it system-wide:
 	sudo gcc -o /usr/bin/dart *.c
 
 Example Usage:
+
 	dart ~/path/to/file
 
 Example Script (Fibonacci):
