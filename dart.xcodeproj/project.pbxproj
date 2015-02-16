@@ -22,7 +22,7 @@
 		FC7292A01A9297FB00FD0AEE /* DartRam.c in Sources */ = {isa = PBXBuildFile; fileRef = FC7292941A9297FB00FD0AEE /* DartRam.c */; };
 		FC7292A11A9297FB00FD0AEE /* DartRam.h in Headers */ = {isa = PBXBuildFile; fileRef = FC7292951A9297FB00FD0AEE /* DartRam.h */; };
 		FC7292A21A9297FB00FD0AEE /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = FC7292961A9297FB00FD0AEE /* main.c */; };
-		FCCC33121A916E94002725B6 /* Documentation.md in Sources */ = {isa = PBXBuildFile; fileRef = FCCC33111A916E94002725B6 /* Documentation.md */; };
+		FCCC33121A916E94002725B6 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = FCCC33111A916E94002725B6 /* README.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -57,7 +57,7 @@
 		FC7292941A9297FB00FD0AEE /* DartRam.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = DartRam.c; sourceTree = "<group>"; };
 		FC7292951A9297FB00FD0AEE /* DartRam.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DartRam.h; sourceTree = "<group>"; };
 		FC7292961A9297FB00FD0AEE /* main.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
-		FCCC33111A916E94002725B6 /* Documentation.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = Documentation.md; sourceTree = "<group>"; };
+		FCCC33111A916E94002725B6 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,7 +112,7 @@
 				FC7292941A9297FB00FD0AEE /* DartRam.c */,
 				FC7292951A9297FB00FD0AEE /* DartRam.h */,
 				FC7292961A9297FB00FD0AEE /* main.c */,
-				FCCC33111A916E94002725B6 /* Documentation.md */,
+				FCCC33111A916E94002725B6 /* README.md */,
 			);
 			name = DART;
 			sourceTree = "<group>";
@@ -217,7 +217,7 @@
 				FC72929B1A9297FB00FD0AEE /* DartDelegate.c in Sources */,
 				FC72929D1A9297FB00FD0AEE /* DartExecutor.c in Sources */,
 				FC7292971A9297FB00FD0AEE /* Dart.c in Sources */,
-				FCCC33121A916E94002725B6 /* Documentation.md in Sources */,
+				FCCC33121A916E94002725B6 /* README.md in Sources */,
 				FC7292A01A9297FB00FD0AEE /* DartRam.c in Sources */,
 				FC7292A21A9297FB00FD0AEE /* main.c in Sources */,
 			);
