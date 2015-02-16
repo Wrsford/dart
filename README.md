@@ -10,8 +10,18 @@ Readme
   
 >I named it DART when I began to design the language, which was before I knew of the web language "Dart." Meh... mine's capitalized.
 
+To Build:
+
+	cd /path/to/dart/folder
+	gcc -o dart *.c
+
+or install it system-wide:
+
+	cd /path/to/dart/folder
+	sudo gcc -o /usr/bin/dart *.c
+
 Example Usage:
-dart ~/path/to/file
+	dart ~/path/to/file
 
 Example Script (Fibonacci):
 
