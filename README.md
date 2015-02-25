@@ -128,8 +128,7 @@ XOR
 CMP
 -------------
 ######CMP *first*, *second*
->Compares *first* to *second* and sets compareFlag to it.  
->TODO: compareFlag needs to be associated with the callstack.
+>Compares *first* to *second* and sets compareFlag to it.
 
 JMP
 -------------

@@ -44,6 +44,7 @@ byte readByteAtAddress(address addr);
 void writeBytesWithLengthToAddress(unit *bytes, unit length, unit addr);
 void readBytesWithLengthFromAddressIntoArray(unit length, unit addr, unit **arry);
 
+unit loadXString(char *string);
 // Advanced Ops
 //#define writeByteToHeapAddress(x, y) writeByteToAddress(x, y+HEAP_OFFSET)
 //#define readByteFromHeapAddress(y) readByteFromAddress(y+HEAP_OFFSET)

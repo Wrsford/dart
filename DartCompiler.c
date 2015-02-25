@@ -12,7 +12,7 @@
 
 unit compileScriptToArray(char *script, unit **arry) {
 	load_commands();
-    dart_load_maps();
+	//dart_load_maps();
 	unit totalLen = 0;
 	int stringcount = 0;
 	char strings[1024][1024];

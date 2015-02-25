@@ -15,6 +15,7 @@
 #include <sys/stat.h>
 
 int dartInit() {
+	
 	if (createRam()) {
 		regsSym = dart_sym("R"); // Registers
 		programCounterSym = dart_sym("PC"); // Program Counter
@@ -105,6 +106,10 @@ void dart_load_maps() {
 	dart_map("CS", 512); // Callstack
 	dart_map("CF", 512); // Compare Flags
 	dart_map("CSI", 1); // Callstack Index
+	dart_map("ARG", 64); // For arguments
+	dart_map("XARG", 64); // For external arguments (outside the VM)
+	dart_map("RETV", 1); // For returning values
+	dart_map("XAC", 1); // XARG count
 	mapsSet = 1;
 	
 }
@@ -436,6 +441,10 @@ new_cmd_block(FSIZE) {
 }
 
 void load_commands() {
+	unit dart_bootloaderinit[] = {
+		13, 0, 0, 589840, 2, 20, 44, 0, 130, 1, 0, 0, 0, 65616, 458768, 42, 2, 0, 65616, 65552, 23, 1, 2, 65616, 65552, 36, 1, 0, 65552, 65552, 40, 2, 1, 65616, 65552, 21, 2, 0, 65552, 1, 0, 0, 0, 524368, 2, 14, 24, 0, 130, 1, 29, -1, 0, 130, 1, 25, 24, 0, 136, 1, 0, 0, 1, 524368, 2, 14, 4, 0, 130, 1, 29, -1, 0, 130, 1, 1, 0, 0, 1, 1, 78, 111, 32, 97, 114, 103, 117, 109, 101, 110, 116, 115, 46, 46, 46, 10, 0
+	};
+	dart_bootloader = dart_bootloaderinit;
 	cmdCount = 0;
 	add_command("MOV", MOV);
 	add_command("RET", RET);

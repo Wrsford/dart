@@ -15,5 +15,6 @@ int runByteCode(byte *code);
 
 unit loadBinary(unit *code, unit totalLen);
 unit executeCode(unit startAddress);
-
+void setXARGS(char **argsPtr, unit count); // Takes strings
+unit bootFile(const char *file);
 #endif

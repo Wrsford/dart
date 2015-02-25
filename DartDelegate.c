@@ -39,7 +39,7 @@ void dart_sendFinishToDelegate(int retCode) {
 }
 
 void dart_requestInputFromDelegate() {
-	if (dartDelegate.object) {
+	if (dartDelegate.initialized) {
 		dart_Input_Pointer = dartDelegate.input(dartDelegate.object);
 	}
 }

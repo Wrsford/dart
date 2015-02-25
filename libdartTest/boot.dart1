@@ -1,0 +1,23 @@
+; Bootloader for DART
+; This is hard coded into the interpreter, this file is only for reference
+; Actually, the compiled binary version is hard coded, not the plaintext
+
+cmp xac, 0
+jle no_args:
+
+mov @r0, xarg0
+fsize @r2, r0
+allc @r1, r2
+fopen r1, r0
+compile @r2, r1
+call r2
+mov @retv, 0
+jmp end:
+
+: no_args:
+print "No arguments...\n"
+mov @retv, 1
+jmp end:
+
+: end:
+ret

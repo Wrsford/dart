@@ -11,7 +11,9 @@
 #include "Dart.h"
 
 dart_new_input_handler(maininput) {
-    return "hi";
+	char *buffer = malloc(512);
+	scanf("%[^\n]", buffer);
+    return buffer;
 }
 
 dart_new_output_handler(mainoutput) {
@@ -19,7 +21,7 @@ dart_new_output_handler(mainoutput) {
 }
 
 dart_new_error_handler(mainerror) {
-    printf("dart error: %d\n", retval);
+    printf("dart error: 0x%x\n", retval);
 }
 
 dart_new_finish_handler(mainfinish) {
@@ -37,43 +39,12 @@ int main(int argc, const char * argv[])
 		//exit(1);
 	}
 	
-	char * buffer = 0;
-	long length;
-	FILE * f = fopen (filename, "rb");
-	
-	if (f)
-	{
-		fseek (f, 0, SEEK_END);
-		length = ftell (f);
-		fseek (f, 0, SEEK_SET);
-		buffer = malloc (length);
-		if (buffer)
-		{
-			fread (buffer, 1, length, f);
-		}
-		fclose (f);
-	}
-	
 	
 	
 	dart_delegate myDelegate = dartDelegateWithInOutErrFinishObj(maininput, mainoutput, mainerror, mainfinish, NULL);
-	/*myDelegate.objectRef = (void*)0xDEADFACE;
-	myDelegate.inputHandler = inputHandler;
-	myDelegate.outputHandler = outputHandler;
-	myDelegate.finishedHandler = finishedHandler;*/
 	dart_setDelegate(myDelegate);
-	unit *code = malloc(2048);
-    unit codeLen = compileScriptToArray(buffer, &code);
-    if (!dartInitiated) {
-		dartInit();
-        dartInitiated = 1;
-	}
-	unit startAddress = loadBinary(code, codeLen);
-    if (startAddress == OUT_OF_MEMORY_ERROR) {
-        printf("Cannot load code, out of memory.\n");
-    }
-    executeCode(startAddress);
-	free(code);
+	
+	bootFile(filename);
     return 0;
 }
 

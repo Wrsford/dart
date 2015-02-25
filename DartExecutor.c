@@ -10,6 +10,14 @@
 #include <memory.h>
 #include "Dart.h"
 
+void setXARGS(char **argsPtr, unit count) {
+	setSymbol(dart_sym("XAC"), count);
+	int x;
+	for (x = 0; x < count; x++) {
+		setSymbolWithOffset(dart_sym("XARG"), x, loadXString(argsPtr[x]));
+	}
+}
+
 unit loadBinary(unit *code, unit totalLen) {
     unit test = sector_alloc(totalLen);
 	//regs[0] = sector_alloc(0xFF);
@@ -86,4 +94,18 @@ unit executeCode(unit startAddress) {
 	sector_free(prgmoff);
 	dart_sendFinishToDelegate(retCode);
 	return retCode;
+}
+
+unit bootFile(const char *file) {
+	load_commands();
+	if (!dartInitiated) {
+		dartInit();
+		dartInitiated = 1;
+	}
+	unit startAddress = loadBinary(dart_bootloader, dart_BL_size);
+	if (startAddress == OUT_OF_MEMORY_ERROR) {
+		printf("Cannot load code, out of memory.\n");
+	}
+	setXARGS((char**)&file, 1);
+	return executeCode(startAddress);
 }

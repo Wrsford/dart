@@ -12,6 +12,7 @@ typedef long long address;
 #define MAX_COMMANDS 512
 #ifndef DART4iOS_Dart_h
 #define DART4iOS_Dart_h
+#include <string.h>
 #include "DartRam.h"
 #include "DartCompiler.h"
 #include "DartExecutor.h"
@@ -96,7 +97,11 @@ unit *programCounter;
 unit *regs;
 unit *compareFlags;
 
+#define dart_BL_size 97
+unit *dart_bootloader;
+
 #define setSymbol(symbol, value) ram[symbol.address] = value
+#define setSymbolWithOffset(symbol, offset, value) ram[symbol.address+offset] = value
 #define getSymbol(symbol) ram[symbol.address]
 #define getSymbolWithOffset(symbol, offset) ram[symbol.address+offset]
 

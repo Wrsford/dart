@@ -18,6 +18,9 @@ int createRam() {
 	stackIdx = sector_alloc(0xfff);
     for (x = 0; x < mapIndex; x++) {
         mapped[x].address = sector_alloc(mapped[x].size);
+		if (mapped[x].address == -1) {
+			dart_sendErrorToDelegate(OUT_OF_MEMORY_ERROR);
+		}
     }
 	if (ram) {
 		return 1;
@@ -84,3 +87,11 @@ void readBytesWithLengthFromAddressIntoArray(unit length, unit addr, unit **arry
 		itr++;
 	}
 }
+
+unit loadXString(char *string) {
+	unit addr = sector_alloc((unit)strlen(string)+1);
+	writeUTF8StringToAddress(string, addr);
+	return addr;
+}
+
+
