@@ -6,7 +6,7 @@
 //  Copyright (c) 2014 iWill LLC. All rights reserved.
 //
 
-typedef int unit;
+
 //#define STACK_OFFSET 0xFFF
 //#define HEAP_OFFSET 0xFFF+STACK_OFFSET
 #ifndef DART4iOS_DartRam_h
@@ -33,6 +33,7 @@ unit prgmoff;
 dart_ram_sector sectors[SECTOR_COUNT];
 
 // Basic Ops
+//void allocSymbol(map_symbol *sym);
 int createRam();
 unit sector_alloc(unit size);
 #define binary_alloc(x) sector_alloc(x)

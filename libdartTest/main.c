@@ -30,21 +30,25 @@ dart_new_finish_handler(mainfinish) {
 
 int main(int argc, const char * argv[])
 {
+	dart_delegate myDelegate = dartDelegateWithInOutErrFinishObj(maininput, mainoutput, mainerror, mainfinish, NULL);
+	dart_setDelegate(myDelegate);
+	
+	//printf("%s\n", compileBootloader("/Users/wrsford/Dropbox/Development/dart/libdartTest/boot.dart1"));
 	const char *filename;
 	if (argc > 1) {
-		filename = argv[1];
+		return bootFile(&argv[1], argc-1);
 	} else {
 		filename = "/Users/wrsford/Dropbox/Development/dart/libdartTest/test.dart1";
 		printf("No input file defined.\n");
+		return bootFile(&filename, 1);
 		//exit(1);
 	}
 	
 	
 	
-	dart_delegate myDelegate = dartDelegateWithInOutErrFinishObj(maininput, mainoutput, mainerror, mainfinish, NULL);
-	dart_setDelegate(myDelegate);
 	
-	bootFile(filename);
-    return 0;
+	
+	
+	
 }
 

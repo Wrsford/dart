@@ -11,7 +11,6 @@ allc @r1, r2
 fopen r1, r0
 compile @r2, r1
 call r2
-mov @retv, 0
 jmp end:
 
 : no_args:

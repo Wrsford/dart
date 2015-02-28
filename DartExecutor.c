@@ -59,7 +59,7 @@ unit executeCode(unit startAddress) {
             }
         }
 		
-		//printf("%lld -- %llx:%llx:%llx:%x:%x\n", addressForNextExec, cmdidx, args[0], args[1], types[0], types[1]);
+		//printf("%lld -- %llx:%llx:%llx:%x:%x\n", *programCounter, cmdidx, args[0], args[1], types[0], types[1]);
 		
 		if (types[0] & ARG_VALUE_AT_ADDRESS) {
 			args[0] = ram[args[0]];
@@ -96,7 +96,7 @@ unit executeCode(unit startAddress) {
 	return retCode;
 }
 
-unit bootFile(const char *file) {
+unit bootFile(const char **args, int count) {
 	load_commands();
 	if (!dartInitiated) {
 		dartInit();
@@ -105,7 +105,8 @@ unit bootFile(const char *file) {
 	unit startAddress = loadBinary(dart_bootloader, dart_BL_size);
 	if (startAddress == OUT_OF_MEMORY_ERROR) {
 		printf("Cannot load code, out of memory.\n");
+		return OUT_OF_MEMORY_ERROR;
 	}
-	setXARGS((char**)&file, 1);
+	setXARGS(args, count);
 	return executeCode(startAddress);
 }

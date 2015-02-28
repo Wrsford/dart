@@ -12,7 +12,6 @@
 
 unit compileScriptToArray(char *script, unit **arry) {
 	load_commands();
-	//dart_load_maps();
 	unit totalLen = 0;
 	int stringcount = 0;
 	char strings[1024][1024];
@@ -212,12 +211,11 @@ unit compileScriptToArray(char *script, unit **arry) {
 				adjustedItr++;
 				continue;
 			}
-            
+			
+			
             // Check for maps
-            
+			
             // parse to the end of the arg
-            
-            
             int m;
             
             int curLen = 0;
@@ -262,6 +260,7 @@ unit compileScriptToArray(char *script, unit **arry) {
                 longestMatch = 0;
             }
             // End maps check*/
+			
 			if (postcmd[x] == '\0') {
 				postcmd[x] = '0';
 			}
@@ -349,10 +348,53 @@ unit compileScriptToArray(char *script, unit **arry) {
 	return totalLen;
 }
 
+char* compileBootloader(char *path) {
+	FILE *f = fopen(path, "rb");
+	if (!f) {
+		return "Failed to open file...\n";
+	}
+	
+	long fsize = dart_fsize(path);
+	
+	char *string = malloc(fsize + 1);
+	fread(string, fsize, 1, f);
+	fclose(f);
+	
+	string[fsize] = 0;
+	fclose(f);
+	unit *code = malloc(sizeof(unit)*1024);
+	unit size = compileScriptToArray(string, &code);
+	realloc(code, size);
+	char *retMe = malloc(2048);
+	sprintf(retMe, "unit dart_bootloader_init[%d] = { \n", size);
+	int x;
+	for (x = 0; x < size; x++) {
+		//printf("%d, ", code[x]);
+		if (x != size-1) {
+			sprintf(retMe, "%s%d, ", retMe, code[x]);
+		} else {
+			sprintf(retMe, "%s%d };", retMe, code[x]);
+		}
+		
+		if (x%5 == 4) {
+			sprintf(retMe, "%s\n", retMe);
+		}
+	}
+	
+	string[0] = '\0';
+	decompile(code, size, &string);
+	printf("%s\n", string);
+	free(string);
+	free(code);
+	return retMe;
+}
+
 void decompile(unit *code, unit length, char** output) { // Not tested
+														 // Tested: seems to work alright, need to do logical AND to
+														 //		figure out the arg types correctly... And do string stuff
 	unit dataStart = length;
 	int x;
-	for (x = 0; x < length; x++) {
+	for (x = 0; x < length; x+=5) {
 		unit *basicBlock = &code[x];
 		if (basicBlock[0] < cmdCount) {
 			dart_command command = commands[basicBlock[0]];
@@ -394,9 +436,8 @@ void decompile(unit *code, unit length, char** output) { // Not tested
 						typeStrings[y] = "";
 						break;
 				}
-				sprintf(*output, "%s %d, %d | %s, %s\n", command.name, args[0], args[1], typeStrings[0], typeStrings[1]);
-				
 			}
+			sprintf(*output, "%s%s %d, %d | %s, %s\n", *output, command.name, args[0], args[1], typeStrings[0], typeStrings[1]);
 		} else {
 			// Not a command
 		}

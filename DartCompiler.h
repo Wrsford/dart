@@ -10,5 +10,6 @@
 #ifndef DART4iOS_DartCompiler_h
 #define DART4iOS_DartCompiler_h
 unit compileScriptToArray(char *script, unit **arry); // Returns program size
-
+char* compileBootloader(char *path);
+void decompile(unit *code, unit length, char** output);
 #endif

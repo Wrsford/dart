@@ -7,12 +7,20 @@
 //
 typedef unsigned char byte;
 typedef long long address;
+typedef int unit;
 
 #define DART_VERSION 1
 #define MAX_COMMANDS 512
 #ifndef DART4iOS_Dart_h
 #define DART4iOS_Dart_h
+typedef struct {
+	char *name;
+	unit size;
+	unit idcode;
+	unit address;
+} map_symbol;
 #include <string.h>
+#include <stdlib.h>
 #include "DartRam.h"
 #include "DartCompiler.h"
 #include "DartExecutor.h"
@@ -52,14 +60,11 @@ typedef struct {
 	cmdBlock *exec;
 	int created;
 } dart_command;
+
 int dart_kill_exe;
 int dartInitiated;
-typedef struct {
-	char *name;
-	unit size;
-	unit idcode;
-	unit address;
-} map_symbol;
+
+
 
 dart_command commands[512];
 map_symbol regsSym; // Reserve 0xFE & 0xFF for strings
@@ -77,7 +82,7 @@ unit unitStringLength(unit pointer);
 dart_delegate dartDelegate;
 void *dart_Input_Pointer;
 
-
+int loadedCmds;
 
 int mapsSet;
 map_symbol mapped[256];
@@ -97,7 +102,7 @@ unit *programCounter;
 unit *regs;
 unit *compareFlags;
 
-#define dart_BL_size 97
+#define dart_BL_size 92
 unit *dart_bootloader;
 
 #define setSymbol(symbol, value) ram[symbol.address] = value
